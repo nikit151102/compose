@@ -10,6 +10,16 @@ services:
       - ./frontendVitkon17:/app
       - /app/node_modules
       
+  desktop:
+    build:
+      context: ./frontendVitkon17_exe
+      dockerfile: Dockerfile-frontend-desktop
+    ports:
+      - 85:85
+    volumes:
+      - ./frontendVitkon17_exe:/app
+      - /app/node_modules
+
   backend:
     build:
       context: ./serverVITKON
@@ -33,22 +43,15 @@ services:
   #     - PMA_ARBITRARY=1
       
   db:
-    image: postgres
+    image: cr.yandex/mirror/postgres:latest
     restart: always
-    # set shared memory limit when using docker-compose
     shm_size: 128mb
-    # or set shared memory limit when deploy via swarm stack
-    #volumes:
-    #  - type: tmpfs
-    #    target: /dev/shm
-    #    tmpfs:
-    #      size: 134217728 # 128*2^20 bytes = 128Mb
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
 
   adminer:
-    image: adminer
+    image: cr.yandex/mirror/adminer:latest
     restart: always
     ports:
       - 8080:8080
