@@ -10,15 +10,15 @@ services:
       - ./frontendVitkon17:/app
       - /app/node_modules
       
-  desktop:
-    build:
-      context: ./frontendVitkon17_exe
-      dockerfile: Dockerfile-frontend-desktop
-    ports:
-      - 85:85
-    volumes:
-      - ./frontendVitkon17_exe:/app
-      - /app/node_modules
+  # desktop:
+  #   build:
+  #     context: ./frontendVitkon17_exe
+  #     dockerfile: Dockerfile-frontend-desktop
+  #   ports:
+  #     - 85:85
+  #   volumes:
+  #     - ./frontendVitkon17_exe:/app
+  #     - /app/node_modules
 
   backend:
     build:
