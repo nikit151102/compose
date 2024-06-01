@@ -5,7 +5,7 @@ services:
       context: ./frontendVitkon17
       dockerfile: Dockerfile-frontend
     ports:
-      - 80:80
+      - 443:443
     volumes:
       - ./frontendVitkon17:/app
       - /app/node_modules
