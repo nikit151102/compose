@@ -25,7 +25,7 @@ services:
       context: ./frontendVitkon17_exe
       dockerfile: Dockerfile-frontend-desktop
     ports:
-      - 85:85
+      - 8050:8050
     volumes:
       - ./frontendVitkon17_exe:/app
       - /app/node_modules
