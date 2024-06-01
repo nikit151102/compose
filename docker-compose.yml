@@ -10,6 +10,16 @@ services:
       - ./frontendVitkon17:/app
       - /app/node_modules
       
+   TGfrontend:
+    build:
+      context: ./tg_app
+      dockerfile: Dockerfile-frontend
+    ports:
+      - 60:60
+    volumes:
+      - ./tg_app:/app
+      - /app/node_modules  
+
   # desktop:
   #   build:
   #     context: ./frontendVitkon17_exe
