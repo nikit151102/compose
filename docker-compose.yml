@@ -15,7 +15,7 @@ services:
       context: ./tg_app
       dockerfile: Dockerfile-frontend
     ports:
-      - 60:60
+      - 8060:8060
     volumes:
       - ./tg_app:/app
       - /app/node_modules  
