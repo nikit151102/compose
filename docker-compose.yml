@@ -10,7 +10,7 @@ services:
       - ./frontendVitkon17:/app
       - /app/node_modules
       
-   TGfrontend:
+  TGfrontend:
     build:
       context: ./tg_app
       dockerfile: Dockerfile-frontend
