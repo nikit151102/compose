@@ -1,4 +1,4 @@
-version: '3'
+version: '3.1'
 services:
   frontend:
     build:
@@ -10,7 +10,7 @@ services:
       - ./frontendVitkon17:/app
       - /app/node_modules
       
-  TGfrontend:
+  tgfrontend:
     build:
       context: ./tg_app
       dockerfile: Dockerfile-frontend
