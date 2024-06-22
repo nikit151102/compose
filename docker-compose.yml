@@ -10,25 +10,25 @@ services:
       - ./frontendVitkon17:/app
       - /app/node_modules
       
-  tgfrontend:
-    build:
-      context: ./tg_app
-      dockerfile: Dockerfile-frontend
-    ports:
-      - 8060:8060
-    volumes:
-      - ./tg_app:/app
-      - /app/node_modules  
+  # tgfrontend:
+  #   build:
+  #     context: ./tg_app
+  #     dockerfile: Dockerfile-frontend
+  #   ports:
+  #     - 8060:8060
+  #   volumes:
+  #     - ./tg_app:/app
+  #     - /app/node_modules  
 
-  desktop:
-    build:
-      context: ./frontendVitkon17_exe
-      dockerfile: Dockerfile-frontend-desktop
-    ports:
-      - 8050:8050
-    volumes:
-      - ./frontendVitkon17_exe:/app
-      - /app/node_modules
+  # desktop:
+  #   build:
+  #     context: ./frontendVitkon17_exe
+  #     dockerfile: Dockerfile-frontend-desktop
+  #   ports:
+  #     - 8050:8050
+  #   volumes:
+  #     - ./frontendVitkon17_exe:/app
+  #     - /app/node_modules
 
   backend:
     build:
