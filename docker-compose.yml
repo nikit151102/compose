@@ -10,7 +10,7 @@ services:
       - ./frontendVitkon17:/app
       - /app/node_modules
   
-  frontendScan:
+  frontendscan:
     build:
       context: ./TecnoScan
       dockerfile: Dockerfile-frontend
