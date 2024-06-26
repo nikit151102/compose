@@ -9,6 +9,17 @@ services:
     volumes:
       - ./frontendVitkon17:/app
       - /app/node_modules
+  
+  frontendScan:
+    build:
+      context: ./TecnoScan
+      dockerfile: Dockerfile-frontend
+    ports:
+      - 8050:8050
+    volumes:
+      - ./TecnoScan:/app
+      - /app/node_modules
+
       
   # tgfrontend:
   #   build:
