@@ -2,12 +2,10 @@ services:
   frontend:
     build:
       context: ./frontendVitkon17
-      context: ./Frontend-ucomand
       dockerfile: Dockerfile-frontend
     ports:
       - 80:80
     volumes:
       - ./frontendVitkon17:/app
-      - ./Frontend-ucomand:/app
       - /app/node_modules
 
