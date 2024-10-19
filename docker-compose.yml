@@ -1,71 +1,13 @@
-version: '3.1'
 services:
   frontend:
     build:
+      context: ./frontendVitkon17
       context: ./Frontend-ucomand
       dockerfile: Dockerfile-frontend
     ports:
       - 80:80
     volumes:
+      - ./frontendVitkon17:/app
       - ./Frontend-ucomand:/app
       - /app/node_modules
-
-
-      
-  # tgfrontend:
-  #   build:
-  #     context: ./tg_app
-  #     dockerfile: Dockerfile-frontend
-  #   ports:
-  #     - 8060:8060
-  #   volumes:
-  #     - ./tg_app:/app
-  #     - /app/node_modules  
-
-  # desktop:
-  #   build:
-  #     context: ./frontendVitkon17_exe
-  #     dockerfile: Dockerfile-frontend-desktop
-  #   ports:
-  #     - 8050:8050
-  #   volumes:
-  #     - ./frontendVitkon17_exe:/app
-  #     - /app/node_modules
-
-  # backend:
-  #   build:
-  #     context: ./serverVITKON
-  #     dockerfile: Dockerfile-backend
-  #   ports:
-  #     - "8000:8000"
-    
-
-  # db:
-  #   image: mariadb:10.6
-  #   restart: always
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: nikit
-
-  # phpmyadmin:
-  #   image: phpmyadmin
-  #   restart: always
-  #   ports:
-  #     - 8030:80
-  #   environment:
-  #     - PMA_ARBITRARY=1
-      
-  db:
-    image: postgres
-    restart: always
-    shm_size: 128mb
-    environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
-
 
